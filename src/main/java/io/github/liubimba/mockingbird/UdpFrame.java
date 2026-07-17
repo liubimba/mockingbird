@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 /**
  * A UDP datagram located inside a captured Ethernet frame.

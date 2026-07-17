@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>com.company.pauldekarin</groupId>
-    <artifactId>rtsp-pcap-server</artifactId>
+    <groupId>io.github.liubimba</groupId>
+    <artifactId>mockingbird</artifactId>
     <version>0.0.1</version>
     <modelVersion>4.0.0</modelVersion>
 
@@ -8,7 +8,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jnetpcap.version>2.3.1+jdk21</jnetpcap.version>
-        <exec.mainClass>com.company.pauldekarin.RTSPServer</exec.mainClass>
+        <exec.mainClass>io.github.liubimba.mockingbird.RTSPServer</exec.mainClass>
     </properties>
 
     <dependencies>

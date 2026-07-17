@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

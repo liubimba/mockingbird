@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
@@ -14,7 +14,7 @@ final class Options {
 
   static final String USAGE =
       """
-      Usage: rtsp-pcap-server --pcap <file> [options]
+      Usage: mockingbird --pcap <file> [options]
 
         --pcap <file>        capture to serve (required)
         --port <n>           RTSP port to listen on (default 5554)

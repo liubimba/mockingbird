@@ -1,14 +1,15 @@
-# rtsp-pcap-server
+# mockingbird
 
-An RTSP server in Java that serves **any pcap capture** by replaying the RTP inside it — no
-encoder involved.
+**A stand-in for the camera you cannot keep plugged in.** Point it at a pcap capture and it
+serves that traffic over RTSP, note for note, the same bytes on every run.
 
-Point it at a capture. It works out what streams are in there, describes them to the client, and
-replays each packet at the moment the capture says it belongs.
+Named after the bird that repeats what it hears, because that is the whole trick: mockingbird
+does not encode anything. It works out what streams live in the capture, describes them to the
+client, and replays each packet at the moment the capture says it belongs.
 
 ```bash
 mvn package
-java --enable-preview -jar target/rtsp-pcap-server-0.0.1.jar \
+java --enable-preview -jar target/mockingbird-0.0.1.jar \
   --pcap bunny.pcapng --map 97:H264/90000 --map 96:mpeg4-generic/12000/2
 ffplay rtsp://localhost:5554/bunny
 ```
@@ -43,7 +44,7 @@ the packets. Rather than guess and hand a client a stream it will decode into no
 says what it needs:
 
 ```
-$ java -jar target/rtsp-pcap-server-0.0.1.jar --pcap bunny.pcapng
+$ java -jar target/mockingbird-0.0.1.jar --pcap bunny.pcapng
 payload type 97 is dynamic, so the capture cannot say what codec it is.
 Supply it, for example: --map 97:H264/90000
 ```
@@ -68,7 +69,7 @@ all without its `fmtp`, and H.264 needs `packetization-mode` before it will reas
 Serving the bundled capture in full:
 
 ```bash
-java --enable-preview -jar target/rtsp-pcap-server-0.0.1.jar --pcap bunny.pcapng \
+java --enable-preview -jar target/mockingbird-0.0.1.jar --pcap bunny.pcapng \
   --map 97:H264/90000 --map 96:mpeg4-generic/12000/2 \
   --fmtp 97:'packetization-mode=1;profile-level-id=42C01E;sprop-parameter-sets=Z0LAHtkDxWhAAAADAEAAAAwDxYuS,aMuMsg==' \
   --fmtp 96:'profile-level-id=1;mode=AAC-hbr;sizelength=13;indexlength=3;indexdeltalength=3;config=1490'
@@ -135,7 +136,7 @@ sudo apt install libpcap-dev
 ```
 
 ```bash
-mvn package     # builds target/rtsp-pcap-server-0.0.1.jar with its dependencies in target/lib
+mvn package     # builds target/mockingbird-0.0.1.jar with its dependencies in target/lib
 mvn test        # 67 tests, none of which need libpcap
 ```
 

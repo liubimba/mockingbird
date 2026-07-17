@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;

@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 import static java.nio.charset.StandardCharsets.US_ASCII;
 
@@ -282,7 +282,7 @@ public class RTSPServer {
   private void respondWith(String status, String headers, String body) throws IOException {
     out.write(status + CRLF);
     out.write("CSeq: " + cSeq + CRLF);
-    out.write("Server: rtsp-pcap-server" + CRLF);
+    out.write("Server: mockingbird" + CRLF);
     out.write("Cache-Control: no-cache" + CRLF);
     out.write("Session: " + sessionId + ";timeout=60" + CRLF);
     if (!headers.isEmpty()) {

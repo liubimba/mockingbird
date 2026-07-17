@@ -1,4 +1,4 @@
-package com.company.pauldekarin;
+package io.github.liubimba.mockingbird;
 
 /**
  * Works out how long to wait before releasing a captured packet, so that a pcap replay
